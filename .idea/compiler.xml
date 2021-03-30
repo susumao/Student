@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="smart-student-api" />
         <module name="smart-student" />
+        <module name="smart-auth" />
         <module name="smart-autoGenerator" />
         <module name="smart-common" />
         <module name="smart-gateway" />
@@ -18,6 +19,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="smart" options="-parameters" />
+      <module name="smart-auth" options="-parameters" />
       <module name="smart-autoGenerator" options="-parameters" />
       <module name="smart-common" options="-parameters" />
       <module name="smart-gateway" options="-parameters" />
