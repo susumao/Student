@@ -19,9 +19,7 @@ public class StudentController {
     public Student query(@PathVariable Integer id) throws Exception {
 //        Student student = studentService.getOne(id);
         Student student = studentService.getById(id);
-        if (Objects.isNull(student)){
-            throw new Exception("未找到");
-        }
+        if (Objects.isNull(student)) throw new Exception("未找到");
         return student;
     }
 }

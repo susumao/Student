@@ -12,17 +12,13 @@
         <module>smart-service</module>
         <module>smart-autoGenerator</module>
         <module>smart-service-api</module>
-        <module>smart-service/smart-student</module>
     </modules>
+    <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.4.RELEASE</version>
-        <relativePath/>
     </parent>
-    <packaging>pom</packaging>
-
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
