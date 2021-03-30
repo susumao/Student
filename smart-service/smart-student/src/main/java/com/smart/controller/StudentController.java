@@ -20,6 +20,7 @@ public class StudentController {
 //        Student student = studentService.getOne(id);
         Student student = studentService.getById(id);
         if (Objects.isNull(student)){
+
             throw new Exception("未找到");
         }
         return student;
