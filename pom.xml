@@ -11,6 +11,8 @@
         <module>smart-common</module>
         <module>smart-service</module>
         <module>smart-autoGenerator</module>
+        <module>smart-service-api</module>
+        <module>smart-service/smart-student</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

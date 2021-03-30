@@ -7,9 +7,6 @@ import com.smart.service.StudentService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
-
 @Service
 @AllArgsConstructor
 public class StudentServiceImpl extends ServiceImpl<StudentDao,Student> implements StudentService {
@@ -19,4 +16,5 @@ public class StudentServiceImpl extends ServiceImpl<StudentDao,Student> implemen
     public Student getOne(Integer id) {
         return studentDao.selectById(id);
     }
+
 }
