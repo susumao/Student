@@ -10,6 +10,7 @@
         <module name="smart-student" />
         <module name="smart-autoGenerator" />
         <module name="smart-common" />
+        <module name="smart-gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
@@ -19,6 +20,7 @@
       <module name="smart" options="-parameters" />
       <module name="smart-autoGenerator" options="-parameters" />
       <module name="smart-common" options="-parameters" />
+      <module name="smart-gateway" options="-parameters" />
       <module name="smart-service" options="-parameters" />
       <module name="smart-service-api" options="-parameters" />
       <module name="smart-student" options="-parameters" />
