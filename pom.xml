@@ -13,6 +13,7 @@
         <module>smart-autoGenerator</module>
         <module>smart-service-api</module>
         <module>smart-gateway</module>
+        <module>smart-auth</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
