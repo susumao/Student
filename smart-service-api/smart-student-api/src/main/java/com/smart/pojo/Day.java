@@ -1,7 +1,6 @@
 package com.smart.pojo;
 
-public enum Day
-{
+public enum Day {
     MONDAY,
     TUESDAY,
     WEDNESDAY,
