@@ -12,13 +12,13 @@ import java.util.Date;
 @TableName(value = "student")
 public class Student {
     @TableId(value = "id")
-    private Integer id;
+    private int id;
     @TableField(value = "name")
     private String name;
     @TableField(value = "birthday")
     private Date birthday;
     @TableField(value = "age")
-    private Integer age;
+    private int age;
     @TableField(value = "addr")
     private String addr;
 }

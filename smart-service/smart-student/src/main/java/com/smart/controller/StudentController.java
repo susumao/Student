@@ -1,17 +1,17 @@
 package com.smart.controller;
 
 
-import com.smart.pojo.Day;
 import com.smart.pojo.Student;
 import com.smart.service.StudentService;
 import lombok.AllArgsConstructor;
-import org.apache.commons.lang3.EnumUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.rmi.ServerException;
+import java.util.Date;
 import java.util.Objects;
+
 
 @RestController
 @AllArgsConstructor
@@ -25,8 +25,26 @@ public class StudentController {
         return student;
     }
 
-    public static void main(String[] args) {
-        boolean validEnum = EnumUtils.isValidEnum(Day.class, "MONDAY");
-        System.out.println(validEnum);
+    @GetMapping("/insert")
+    public void insert(){
+        Student student = new Student();
+        student.setAddr("深圳");
+        student.setAge(11);
+        student.setBirthday(new Date());
+        student.setName("艾欧里亚");
+        studentService.insert(student);
+    }
+
+    @GetMapping("/update/")
+    public void update(){
+        Student student = new Student();
+        student.setId(5);
+        student.setAge(66);
+        studentService.updateById(student);
+    }
+
+    @GetMapping("/delete/{id}")
+    public Boolean delete(@PathVariable Integer id){
+        return studentService.removeById(id);
     }
 }

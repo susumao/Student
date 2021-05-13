@@ -17,4 +17,9 @@ public class StudentServiceImpl extends ServiceImpl<StudentDao,Student> implemen
         return studentDao.selectById(id);
     }
 
+    @Override
+    public void insert(Student student) {
+        studentDao.insert(student);
+    }
+
 }

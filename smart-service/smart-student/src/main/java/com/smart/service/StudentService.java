@@ -6,4 +6,6 @@ import com.smart.pojo.Student;
 public interface StudentService extends IService<Student> {
 
     Student getOne(Integer id);
+
+    void insert(Student student);
 }
