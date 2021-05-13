@@ -7,5 +7,5 @@ public interface StudentService extends IService<Student> {
 
     Student getOne(Integer id);
 
-    void insert(Student student);
+    Integer insert(Student student);
 }

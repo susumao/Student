@@ -26,25 +26,27 @@ public class StudentController {
     }
 
     @GetMapping("/insert")
-    public void insert(){
+    public String insert(){
         Student student = new Student();
         student.setAddr("深圳");
         student.setAge(11);
         student.setBirthday(new Date());
         student.setName("艾欧里亚");
         studentService.insert(student);
+        return "新增成功!";
     }
 
-    @GetMapping("/update/")
-    public void update(){
+    @GetMapping("/update")
+    public Boolean update(){
         Student student = new Student();
         student.setId(5);
         student.setAge(66);
-        studentService.updateById(student);
+        return studentService.updateById(student);
     }
 
     @GetMapping("/delete/{id}")
     public Boolean delete(@PathVariable Integer id){
         return studentService.removeById(id);
     }
+
 }

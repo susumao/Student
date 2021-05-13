@@ -20,6 +20,11 @@
                     <skip>true</skip>
                     <finalName>${project.name}</finalName>
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

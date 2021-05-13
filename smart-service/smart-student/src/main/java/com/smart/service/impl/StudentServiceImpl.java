@@ -18,8 +18,8 @@ public class StudentServiceImpl extends ServiceImpl<StudentDao,Student> implemen
     }
 
     @Override
-    public void insert(Student student) {
-        studentDao.insert(student);
+    public Integer insert(Student student) {
+        return studentDao.insert(student);
     }
 
 }
