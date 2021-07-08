@@ -8,9 +8,15 @@ import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 
 public class CodeGeneratorUtil {
-    public static void main(String[] args) {
+//    @Autowired
+//    private ApplicationContext applicationContext;
+
+    public void autoGenerator() {
+//        String property = applicationContext.getEnvironment().getProperty("");
 
         // 1、创建代码生成器
         AutoGenerator mpg = new AutoGenerator();
@@ -18,19 +24,19 @@ public class CodeGeneratorUtil {
         GlobalConfig globalConfig = new GlobalConfig();
         String projectPath = "D:\\projectDemo\\demo\\smart-autoGenerator";//项目的当前位置的路径
         globalConfig.setOutputDir(projectPath + "/src/main/java");//生成的代码放到哪个路径
-        globalConfig.setAuthor("maol");
+        globalConfig.setAuthor("");
         globalConfig.setOpen(false); //生成后是否打开资源管理器
         globalConfig.setFileOverride(false); //重新生成时文件是否覆盖
         globalConfig.setServiceName("%sService"); //去掉Service接口的首字母I
-        globalConfig.setIdType(IdType.ID_WORKER_STR); //主键策略
-        globalConfig.setDateType(DateType.ONLY_DATE);//定义生成的实体类中日期类型
-        globalConfig.setSwagger2(false);//开启Swagger2模式
+        globalConfig.setIdType(IdType.ASSIGN_ID); //主键策略
+        globalConfig.setDateType(DateType.ONLY_DATE); //定义生成的实体类中日期类型
+        globalConfig.setSwagger2(false); //开启Swagger2模式
         mpg.setGlobalConfig(globalConfig);
 
         //配置数据库信息
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setUrl("jdbc:mysql://8.135.80.166:3306/demo?useUnicode=true&useSSL=false&characterEncoding=utf8");
-        dataSourceConfig.setDriverName("com.mysql.jdbc.Driver");
+        dataSourceConfig.setDriverName("com.mysql.cj.jdbc.Driver");
         dataSourceConfig.setUsername("root");
         dataSourceConfig.setPassword("123456");
         mpg.setDataSource(dataSourceConfig);

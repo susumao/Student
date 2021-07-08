@@ -4,12 +4,16 @@ package com.smart.controller;
 import com.smart.pojo.Student;
 import com.smart.service.StudentService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.rmi.ServerException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Objects;
 
 
@@ -17,6 +21,7 @@ import java.util.Objects;
 @AllArgsConstructor
 public class StudentController {
     private final StudentService studentService;
+    private static final String URL = "http://sz.xrdev.cn/inspection/";
 
     @GetMapping("/query/{id}")
     public Student query(@PathVariable Integer id) throws Exception {
@@ -26,7 +31,7 @@ public class StudentController {
     }
 
     @GetMapping("/insert")
-    public String insert(){
+    public String insert() {
         Student student = new Student();
         student.setAddr("深圳");
         student.setAge(11);
@@ -37,7 +42,7 @@ public class StudentController {
     }
 
     @GetMapping("/update")
-    public Boolean update(){
+    public Boolean update() {
         Student student = new Student();
         student.setId(5);
         student.setAge(66);
@@ -45,8 +50,20 @@ public class StudentController {
     }
 
     @GetMapping("/delete/{id}")
-    public Boolean delete(@PathVariable Integer id){
+    public Boolean delete(@PathVariable Integer id) {
         return studentService.removeById(id);
     }
 
+    public static void getSampleCodeList(String customKey) {
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        HashMap<Object, Object> textParams = new HashMap<>();
+        textParams.put("customKey", customKey);
+        HttpEntity<Object> entity = new HttpEntity<Object>(textParams, headers);
+        headers.add("Content-Type", "application/json");
+        String s = restTemplate.postForObject(URL, entity, String.class);
+    }
+
 }
+
+
