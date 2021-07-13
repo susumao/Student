@@ -6,11 +6,14 @@ import com.smart.service.StudentService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.rmi.ServerException;
 import java.util.Date;
 import java.util.HashMap;
@@ -24,7 +27,7 @@ public class StudentController {
     private static final String URL = "http://sz.xrdev.cn/inspection/";
 
     @GetMapping("/query/{id}")
-    public Student query(@PathVariable Integer id) throws Exception {
+    public Student query(@PathVariable Integer id, HttpServletRequest request, HttpServletResponse response) throws Exception {
         Student student = studentService.getById(id);
         if (Objects.isNull(student)) throw new ServerException("未找到");
         return student;
@@ -42,7 +45,7 @@ public class StudentController {
     }
 
     @GetMapping("/update")
-    public Boolean update() {
+    public Boolean update(Model model) {
         Student student = new Student();
         student.setId(5);
         student.setAge(66);
