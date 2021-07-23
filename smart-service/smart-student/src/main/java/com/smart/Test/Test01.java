@@ -7,7 +7,6 @@ import java.util.Date;
 
 public class Test01 {
     public static void main(String[] args) {
-        A a = new A();
         System.out.println(A.m);
         DateTime dateTime = DateUtil.beginOfDay(new Date());
         System.out.println(dateTime);
