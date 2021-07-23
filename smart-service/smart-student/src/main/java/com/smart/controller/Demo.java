@@ -1,7 +1,5 @@
 package com.smart.controller;
 
-import com.szxysoft.commons.utils.MsConvertPdfUtils;
-import com.szxysoft.commons.utils.PDFUtils;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -21,7 +19,7 @@ public class Demo {
 
     public static class Test4 {
         public static void main(String[] args) {
-            HashMap<Object, Object> objectObjectHashMap = new HashMap<>();
+            HashMap<Object, Object> objectObjectHashMap = new HashMap<>(2);
             objectObjectHashMap.put("1","2");
             objectObjectHashMap.put("1","3");
             System.out.println(objectObjectHashMap.get("1"));

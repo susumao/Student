@@ -8,12 +8,13 @@ import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 
 public class CodeGeneratorUtil {
 //    @Autowired
 //    private ApplicationContext applicationContext;
+public static void main(String[] args) {
+
+}
 
     public void autoGenerator() {
 //        String property = applicationContext.getEnvironment().getProperty("");
